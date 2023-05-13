@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Bookshop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: black;
+    }
+    
+    h1,h3 {
+      text-align: center;
+      color: bisque;
+    }
+  h2{color: bisque;}
+    
+  
+  .top-bar {
+      position: fixed;
+  background-color:rgba(109, 107, 107, 0.5);
+  padding: 10px 0;
+}
+
+.top-bar-content {
+  max-width: 960px;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.top-bar-menu a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.top-bar-menu a:first-child {
+  margin-left: 10px;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(149, 148, 148, 0.4);
+}
+
+
+.modal-content {
+  
+  background-color: #cfc8c8;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #000000;
+  width: 300px;
+}
+
+.modal-content h2{color: #000000;}
+
+.close {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+   table{
+    
+    margin:  5% 15% 15% 15%;
+     }
+  
+    
+    .book-section {
+      margin-bottom: 20px;
+      margin-left: 30px;
+    }
+    
+    .book-section-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .book {
+      display: inline-block;
+      width: 250px;
+      margin: 10px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .book:hover {
+      transform: scale(1.05);
+    }
+    
+    .book img {
+      display: block;
+      margin: 0 auto;
+      width: 180px;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .book-title {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .book-author {
+      margin-top: 5px;
+      font-style: italic;
+      text-align: center;
+    }
+    
+    .book-price {
+      margin-top: 5px;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .book-description {
+      display: none;
+      margin-top: 10px;
+      text-align: justify;
+      
+    }
+    
+    .book.open .book-description {
+      display: block;
+    }
+  </style>
+  <script>
+    
+    function toggleDescription(book) {
+      book.classList.toggle("open");
+    }
+
+    function openContactWindow() {
+  var modal = document.getElementById("contactModal");
+  modal.style.display = "block";
+}
+
+function closeContactWindow() {
+  var modal = document.getElementById("contactModal");
+  modal.style.display = "none";
+}
+
+  
+  </script>
+</head>
+<body>
+  
+
+  <div class="top-bar">
+  <div class="top-bar-content">
+    <span class="logo">our books</span>
+    <nav class="top-bar-menu">
+      <a href="#motivation">Motivation</a>
+      <a href="#novels">Novels</a>
+      <a href="#history">History</a>
+      <a href="#poetry">Poetry</a>
+
+      <a href="#" onclick="openContactWindow()">Contact</a>
+
+   <div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeContactWindow()">&times;</span>
+    <h2>For more information or to confirm your order contact us </h2>
+    <p>instagram: @book_store7</p>
+    <p>Phone: 123-456-7890</p>
+  </div>
+</div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<h1>Welcome to our Book Store </h1>
+<h3> Here you can find all the books available in our store </h3>
+  
+
+
+<table>
+  <td width="30%"><img src="book.jpg" alt="book" width="100%" ></td>
+  <td><img src="read.jpg" alt="read"></td>
+</table>
+
+
+        
+
+ 
+  
+
+  
+  <div class="book-section">
+    <h2 class="book-section-title" id="motivation">Motivation</h2>
+    
+    <div class="book" onclick="toggleDescription(this);">
+      <img src="badass.jpg" alt="Book 1">
+      <div class="book-title">You Are a Badass</div>
+      <div class="book-author">Jen Sencero</div>
+      <div class="book-price">$8.89</div>
+      <div class="book-description">
+        The first ever self-development book to help millions of people around the globe transform 
+        their lives using humor, irreverence, and the occasional curse word—now updated and expanded
+         for its 10th anniversary with a brand-new foreword, reader's guide, and more!
+      </div>
+    </div>
+    
+    <div class="book" onclick="toggleDescription(this);">
+      <img src="mountain.jpg" alt="Book 2">
+      <div class="book-title">The Mountain is You</div>
+      <div class="book-author">Brianna Wiest </div>
+      <div class="book-price">$18.99</div>
+      <div class="book-description">
+        This is a book about self-sabotage. Why we do it, when we do it, and how to stop doing 
+        it—for good. Coexisting but conflicting needs create self-sabotaging behaviors. 
+        This is why we resist efforts to change, often until they feel completely futile. 
+        But by extracting crucial insight from our most damaging habits, building emotional 
+        intelligence by better understanding our brains and bodies, releasing past experiences 
+        at a cellular level, and learning to act as our highest potential future selves, we can
+        step out of our own way and into our potential. For centuries, the mountain has been 
+        used as a metaphor for the big challenges we face, especially ones that seem impossible
+        to overcome. To scale our mountains, we actually have to do the deep internal work of 
+        excavating trauma, building resilience, and adjusting how we show up for the climb. 
+        In the end, it is not the mountain we master, but ourselves.
+      </div>
+    </div>
+  
+  <div class="book" onclick="toggleDescription(this);">
+    <img src="you.jpg" alt=" Maybe It's You">
+    <div class="book-title"> Maybe It's You</div>
+    <div class="book-author">Lauren Handel Zander</div>
+    <div class="book-price">$14.45</div>
+    <div class="book-description">
+        In Maybe It's You, life coach Lauren Handel Zander walks readers through the innovative step-by-step
+        process that has transformed the lives of tens of thousands of her clients, and explains how anyone
+        can achieve amazing things when we stop lying and finally start keeping the promises we make to ourselves.
+        Whether readers want to find love, succeed at work, fix a fractured relationship, or lose weight, Zander's
+        method will offer a road map to finally get there. Filled with practical exercises, inspiring client stories,
+        and Lauren's own hard-won lessons, this book enables readers to identify, articulate, and account for their
+        own setbacks so they can transform them into strengths.
+    </div>
+  </div>
+
+  <div class="book" onclick="toggleDescription(this);">
+    <img src="letting.jpg" alt="letting go">
+    <div class="book-title">Letting Go</div>
+    <div class="book-author">David R. Hawkins</div>
+    <div class="book-price">$12.99</div>
+    <div class="book-description">
+      TLetting Go describes a simple and effective means by which to let go of the obstacles to enlightenment 
+      and become free of negativity. During the many decades of the author's clinical psychiatric practice, 
+      the primary aim was to seek the most effective ways to relieve human suffering in all of its many forms.
+      The inner mechanism of surrender was found to be of great practical benefit and is described in this book. 
+    </div>
+  </div>
+   <div class="book" onclick="toggleDescription(this);">
+    <img src="whatever.jpg" alt="Whatever It Takes">
+    <div class="book-title">Whatever It Takes</div>
+    <div class="book-author">Brandon Bornancin </div>
+    <div class="book-price">$13,49</div>
+    <div class="book-description">
+     No matter who you are or where you come from, your education, or your network, you can defy the odds to create 
+     the life you want and build the business you’ve only dreamed about.
+    </div>
+  </div>
+  <div class="book" onclick="toggleDescription(this);">
+    <img src="hurt.jpg" alt="Can't Hurt Me">
+    <div class="book-title">Can't Hurt Me</div>
+    <div class="book-author">David Goggins</div>
+    <div class="book-price">$17.99</div>
+    <div class="book-description">
+     In Can't Hurt Me, David Goggins shares his astonishing life story and reveals that most of us tap into only 40% of our
+    capabilities. Goggins calls this The 40% Rule, and his story illuminates a path that anyone can follow to push
+    past pain, demolish fear, and reach their full potential. 
+    </div>
+  </div>
+  <div class="book" onclick="toggleDescription(this);">
+    <img src="next.jpg" alt="what’s next?">
+    <div class="book-title">what’s next?</div>
+    <div class="book-author">Elana Lyn Gross</div>
+    <div class="book-price">$15.99</div>
+    <div class="book-description">
+     The celebrations have ended and you’ve finally graduated from college. But the one looming question remains over
+     every recent grad’s head: what’s next?
+
+     In this book, you’ll find a detailed guide to putting together a five-year plan to set yourself up for success. 
+     No need to stress about having the rest of your life mapped out—instead, you’ll focus on how to make the most
+     after graduation so you can thrive in the years to come. Whether you’re looking for advice on turning your first
+     job out of college to a long-term career or need some tips on managing your money so you can pay down your 
+     student debt (and treat yourself), you’ll find all that and more in What Next?.
+
+     Filled with advice from journalist and lifestyle blogger Elana Lyn Gross, What Next? includes all the tools you
+     need to achieve your goals one step at a time. Offering helpful guidance on every aspect of life, you’ll have no
+     problem answering the question: what’s next?
+    </div>
+  </div>
+  <div class="book" onclick="toggleDescription(this);">
+    <img src="okay.jpg" alt="It's okay to not eat your peas">
+    <div class="book-title">It's okay to not eat your peas</div>
+    <div class="book-author">David Kratzke</div>
+    <div class="book-price">$12.95</div>
+    <div class="book-description">
+    Told in a conversational style, It’s okay to not eat your peas is a collection of short stories that weave together
+    examples of how the little moments in life leave lasting impressions. Drawing from his own experiences, David Kratzke
+    takes you on an insightful, witty and relatable ride to deliver inspiring and motivational messages. 
+    Through his unique view of everyday events, he shares valuable lessons learned from family, teachers, coaches, 
+    bosses, colleagues and friends, and reveals how they have shaped his path forward. These anecdotes will show you
+    how to be more present in your own life and to more clearly see the inspiration that’s all around you. 
+    This uplifting book is a must read for graduates entering the real world or for anyone looking for direction and
+    purpose in life.
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+  <div class="book-section">
+    <h2 class="book-section-title" id="novels">Novels</h2>
+    
+    <div class="book" onclick="toggleDescription(this);">
+      <img src="don't_tell_mummy.jpg" alt="Don’t Tell Mummy">
+      <div class="book-title">Don’t Tell Mummy</div>
+      <div class="book-author">Toni Maguier</div>
+      <div class="book-price">$13.91</div>
+      <div class="book-description">
+        This heart-wrenching memoir from Toni Maguire tells the deeply moving story of an idyllic childhood that 
+        masked a terrible truth. Underneath her mother's gentility and her father's roguish charm lay horrifying 
+        secrets, which eventually led to their only child's near destruction.
+      </div>
+    </div>
+
+    <div class="book" onclick="toggleDescription(this);">
+        <img src="daddy.jpg" alt="When Daddy Comes Home">
+        <div class="book-title">When Daddy Comes Home</div>
+        <div class="book-author">Toni Maguier</div>
+        <div class="book-price">$13.91</div>
+        <div class="book-description">
+            She finally thought she was safe…
+
+            Toni Maguire, author of Number One Bestseller ‘Don't Tell Mummy’, takes up the story of her tragic
+            childhood where she left off, revealing the awful truth about what happened when her father, sent to
+            jail for abusing her, was released, and came home…
+            
+            Toni Maguire's father abused her from the age of six, and was only found out when she fell pregnant,
+            losing the child from a botched abortion. Jailed for his crimes with the help of her testimony,
+            Antoinette believed she was finally safe, but it was not to last…
+            
+            Being despatched to collect her father from the station by herself marked a new low for young Antoinette.
+            Realising that she was no longer safe at home, she was forced to leave. Her mother did nothing to protect
+            her or prevent her going.
+            
+            Traumatised and alone, Antoinette was unable to cope, and was admitted to a psychiatric hospital, sinking
+            deeper into despair every day. Finally transferred to the dead-end ward with no hope of recovery, 
+            Antoinette slowly began to improve, by the sheer force of her indomitable will.
+        </div>
+      </div>
+    
+    <div class="book" onclick="toggleDescription(this);">
+      <img src="invisible.jpg" alt="The Invisible Girl">
+      <div class="book-title">The Invisible Girl: A Memoir</div>
+      <div class="book-author">Yvonne Sandomir</div>
+      <div class="book-price">$14.99</div>
+      <div class="book-description">
+        From the age of four, Eve wandered through a maze of injustice, exploitation, and unthinkable parental betrayal.
+        After escaping home at the age of fifteen, it disheartened Eve to find that her childhood was only the beginning
+        of a road fraught with violent relationships.
+        Come along on her journey of perseverance through intense psychotherapy as she learns it is possible to not only
+        survive the after-effects of deep childhood trauma but break the generational cycle for her own family.
+
+      </div>
+    </div>
+
+    <div class="book" onclick="toggleDescription(this);">
+        <img src="stars.jpg" alt="The Fault in Our Stars">
+        <div class="book-title">The Fault in Our Stars</div>
+        <div class="book-author">John Green</div>
+        <div class="book-price">$7.83</div>
+        <div class="book-description">
+        Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything 
+        but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus 
+        Waters suddenly appears at Cancer Kid Support Group, Hazel’s story is about to be completely rewritten.
+
+        </div>
+      </div>
+
+      <div class="book" onclick="toggleDescription(this);">
+        <img src="house.jpg" alt="The House on Prytania">
+        <div class="book-title">The House on Prytania</div>
+        <div class="book-author">Karen White</div>
+        <div class="book-price">$29.00</div>
+        <div class="book-description">
+         When Beau Ryan asks her for a favor that threatens to stall her hard-won recovery and send her hurtling
+        backwards, Nola Trenholm, torn between helping him and protecting herself, realizes until it’s almost too 
+        late why ghosts are haunting her house, throwing her and Beau together to fight a common enemy. (mystery & detective). Simultaneous.
+        </div>
+      </div>
+      <div class="book" onclick="toggleDescription(this);">
+        <img src="rain.jpg" alt="When the Rain Ends">
+        <div class="book-title">When the Rain Ends</div>
+        <div class="book-author">Mary Ellen Taylor</div>
+        <div class="book-price">$12.99</div>
+        <div class="book-description">
+         From The Brighter the Light author Mary Ellen Taylor comes an uplifting tale of hope and love between a 
+         mother and daughter as they learn that life is a masterpiece in the making.
+
+         When artist Dani Manchester learns she’s slowly losing her vision, she becomes unmoored. Her ex-husband 
+         died only months before, leaving Dani and her preteen daughter grief stricken. Suddenly, the life Dani 
+         built for her family on the Outer Banks feels like a painful reminder of all they’ve lost.
+
+         On a whim, Dani sells her waterfront home and buys an old farm inland near the Virginia state line. But
+          Dani’s daughter recoils at the sudden, drastic change. The Outer Banks’ sun-swept beaches, pink dawns, 
+          and savage storms are all she’s ever known.
+
+         But Dani is resolute, and the pair move to Virginia to embark on a challenging renovation. That summer, 
+         their efforts to turn a run-down silo into an art studio bring forth new friends, new loves, and new challenges.
+
+         As mother and daughter navigate the fiercest storm of their lives, they learn that instead of waiting for
+        the skies to clear, they can withstand the wind and rain, so long as they do it together.
+        </div>
+      </div>
+      <div class="book" onclick="toggleDescription(this);">
+        <img src="home.jpg" alt="The Route That Takes You Home">
+        <div class="book-title">The Route That Takes You Home</div>
+        <div class="book-author">Melanie Lageschulte</div>
+        <div class="book-price">$12.95</div>
+        <div class="book-description">
+          It’s been a rough year for Kate Duncan, both on and off the job. Being a mail carrier puts her in close 
+          proximity to her customers, with consequences that can’t always be foreseen. But an opening at her hometown's 
+          post office offers a new way forward, and Kate decides to put Chicago in her rearview mirror.
+         What follows is a summer filled with change. Kate and her cat settle into a charming apartment above Eagle 
+         River’s historic Main Street, but she dreams of a different home to call her own. And as she drives the back 
+         roads around Eagle River, Kate begins to take a personal interest in the people on her route.
+
+         When an elderly resident goes missing, Kate is determined to help track him down. It’s a quest marked not by 
+         miles of gravel, but matters of the heart: friendship, family, and the small connections that add up to a 
+         well-lived life.
+        </div>
+      </div>
+      <div class="book" onclick="toggleDescription(this);">
+        <img src="island.jpg" alt="Shutter Island">
+        <div class="book-title">Shutter Island</div>
+        <div class="book-author">Dennis Lehane</div>
+        <div class="book-price">$12.99</div>
+        <div class="book-description">
+         In the year 1954, U.S. Marshal Teddy Daniels and his new partner, Chuck Aule, come to Shutter Island, home 
+         of Ashecliffe Hospital for the Criminally Insane, to investigate an unexplained disappearance. Multiple 
+         murderess Rachel Solando is loose somewhere on this barren island, despite having been kept under constant 
+         surveillance in a locked, guarded cell. As a killer hurricane bears relentlessly down on the island, hints 
+         of radical experimentation and covert government machinations add darker, more sinister shades to an already
+         bizarre case. Because nothing at Ashecliffe Hospital is remotely what it seems…
+        </div>
+      </div>
+      
+  </div>
+   <br>
+  <br>
+  <br>
+
+  <div class="book-section">
+    <h2 class="book-section-title" id="history">History</h2>
+    
+    <div class="book" onclick="toggleDescription(this);">
+      <img src="assyria.jpg" alt="Assyria: The Rise and Fall of the World’s First Empire">
+      <div class="book-title">Assyria: The Rise and Fall of the World’s First Empire</div>
+      <div class="book-author">Eckart Frahm</div>
+      <div class="book-price">$25.41</div>
+      <div class="book-description">
+        At its height in 660 BCE, the kingdom of Assyria stretched from the Mediterranean Sea to the Persian Gulf.
+        It was the first empire the world had ever seen. Here, historian Eckart Frahm tells the epic story of Assyria
+        and its formative role in global history. Assyria’s wide-ranging conquests have long been known from the 
+        Hebrew Bible and later Greek accounts. But nearly two centuries of research now permit a rich picture of the
+        Assyrians and their empire beyond the battlefield: their vast libraries and monumental sculptures, their 
+        elaborate trade and information networks, and the crucial role played by royal women.  
+ 
+      </div>
+    </div>
+    
+    <div class="book" onclick="toggleDescription(this);">
+      <img src="days.jpg" alt="Bad Days in History">
+      <div class="book-title">Bad Days in History</div>
+      <div class="book-author">Michael Farquhar </div>
+      <div class="book-price">$10.99</div>
+      <div class="book-description">
+       National Geographic author Michael Farquhar uncovers an instance of bad luck, epic misfortune, and unadulterated 
+       mayhem tied to every day of the year. From Caligula's blood-soaked end to hotelier Steve Wynn's unfortunate 
+       run-in with a priceless Picasso, these 365 tales of misery include lost fortunes (like the would-be Apple investor 
+       who pulled out in 1977 and missed out on a $30 billion-dollar windfall), romance gone wrong (like the 16th-century Shah who experimented with an early form of Viagra with empire-changing results), and truly bizarre moments (like the Great Molasses Flood of 1919).
+      </div>
+    </div>
+  
+  <div class="book" onclick="toggleDescription(this);">
+    <img src="light.jpg" alt=" And There Was Light">
+    <div class="book-title">And There Was Light</div>
+    <div class="book-author">Jon Meacham</div>
+    <div class="book-price">$20.23</div>
+    <div class="book-description">
+       NEW YORK TIMES BESTSELLER • Pulitzer Prize–winning biographer Jon Meacham chronicles the life of Abraham Lincoln, 
+       charting how—and why—he confronted secession, threats to democracy, and the tragedy of slavery to expand the 
+       possibilities of America.
+ 
+    </div>
+  </div>
+
+  <div class="book" onclick="toggleDescription(this);">
+        <img src="forg.jpg" alt="The Forgotten 500">
+        <div class="book-title">The Forgotten 500</div>
+        <div class="book-author">Gregory A. Freeman</div>
+        <div class="book-price">$12.30</div>
+        <div class="book-description">
+         During a bombing campaign over Romanian oil fields, hundreds of American airmen were shot down in Nazi-occupied
+        Yugoslavia. Local Serbian farmers and peasants risked their own lives to give refuge to the soldiers while they 
+        waited for rescue, and in 1944, Operation Halyard was born. The risks were incredible. The starving Americans in 
+        Yugoslavia had to construct a landing strip large enough for C-47 cargo planes—without tools, without alerting 
+        the Germans, and without endangering the villagers. And the cargo planes had to make it through enemy airspace 
+        and back—without getting shot down themselves.
+        </div>
+      </div>
+      
+
+</div>
+<br>
+<br>
+<br>
+
+<div class="book-section">
+    <h2 class="book-section-title" id="poetry">Poetry</h2>
+    
+    <div class="book" onclick="toggleDescription(this);">
+      <img src="talk.jpg" alt="THINGS WE DON’T TALK ABOUT">
+      <div class="book-title">THINGS WE DON’T TALK ABOUT</div>
+      <div class="book-author">Pandora Owl</div>
+      <div class="book-price">$7.50</div>
+      <div class="book-description">
+       "Things We Don't Talk About" is a short collection of thoughts, quotes and poetry highlighting some hardships 
+       of living with depression and mental illness and the effects it has on relationships with yourself and loved 
+       ones. It's a personal lens into the darkest places your mind can take you and the struggle of battling your 
+       own mind. It's a peak of what's underneath the surface that most people battle in silence, something you may 
+       or may not relate to. If you're reading this, it's not too late and you're not alone. In addition, I just 
+       wanted to say thank you for allowing me to share a part of me, whether it was specifically of value to you. 
+       I hope to make at least one person in this world to feel less alone. Communication and or expressing our feelings, 
+       it's one of the hardest things to do. Often we get discouraged to even try to express ourselves due to the fear 
+       of not being understood and or not doing it the "right" way. We are all human and the best thing we can do is to 
+       continue trying. Please keep an open mind and always lead with love. 
+      </div>
+    </div>
+    
+    <div class="book" onclick="toggleDescription(this);">
+      <img src="milk.jpg" alt="Milk and Honey">
+      <div class="book-title">Milk and Honey</div>
+      <div class="book-author">Rupi Kaur</div>
+      <div class="book-price">$7.83</div>
+      <div class="book-description">
+       The book is divided into four chapters, and each chapter serves a different purpose. Deals with a different 
+       pain. Heals a different heartache. milk and honey takes readers through a journey of the most bitter moments 
+       in life and finds sweetness in them because there is sweetness everywhere if you are just willing to look.
+      </div>
+    </div>
+  
+  <div class="book" onclick="toggleDescription(this);">
+    <img src="sun.jpg" alt=" The Sun and Her Flowers ">
+    <div class="book-title"> The Sun and Her Flowers </div>
+    <div class="book-author">Rupi Kaur</div>
+    <div class="book-price">$8.89</div>
+    <div class="book-description">
+      Divided into five chapters and illustrated by kaur, the sun and her flowers is a journey of wilting, falling, 
+      rooting, rising, and blooming. A celebration of love in all its forms.  
+    </div>
+  </div>
+
+  <div class="book" onclick="toggleDescription(this);">
+        <img src="over.jpg" alt="Getting Over You">
+        <div class="book-title">Getting Over You</div>
+        <div class="book-author">Leslie B</div>
+        <div class="book-price">$7.99</div>
+        <div class="book-description">
+       getting over you
+       was the strangest feeling
+      i ever had to experience
+      it was like
+      my mind knew the answers
+      but emotionally,
+      i needed to grieve
+      before i could be okay
+      again
+        </div>
+      </div>
+      <div class="book" onclick="toggleDescription(this);">
+        <img src="tears.jpg" alt="The Tears That Taught Me">
+        <div class="book-title">The Tears That Taught Me</div>
+        <div class="book-author">Morgan Richard Olivier </div>
+        <div class="book-price">$17.09</div>
+        <div class="book-description">
+         
+         With unapologetically honest reflections and revelations—Morgan Richard Olivier embraces the tears, trials, 
+         and triumphs one experiences when seeking development, direction, and detachment.
+
+         The Tears That Taught Me poetry and prose collection guides readers as they dig through the roots of their 
+         struggles, truths, faith, and life lessons.
+
+         Through pruning, positioning, and reframing—we are able to blossom as we make peace with our pain and accept
+        the greater purpose of every experience and emotion endured.
+        </div>
+      </div>
+      <div class="book" onclick="toggleDescription(this);">
+        <img src="thoughts.jpg" alt="2am Thoughts">
+        <div class="book-title">2am Thoughts</div>
+        <div class="book-author">Makenzie Campbell </div>
+        <div class="book-price">$11.19</div>
+        <div class="book-description">
+       The poetry of 2am Thoughts condenses an entire relationship with its untamed emotions and experiences to a 
+       single day. As the long hours of the night drag on, so does the love, heartache, and loss. When the dawn 
+       breaks, the morning sun brings acceptance, healing, and recovery.
+        </div>
+      </div>
+      <div class="book" onclick="toggleDescription(this);">
+        <img src="shesun.jpg" alt="SHE IS THE SUN">
+        <div class="book-title">SHE IS THE SUN</div>
+        <div class="book-author">Niccole Salm</div>
+        <div class="book-price">$8.99</div>
+        <div class="book-description">
+          This collection of poetry is about power, resilience, overcoming hard times, and unleashing the chains we 
+          put on ourselves. These are stories of realizations, heartache, family trauma, healing, blooming love, and 
+          finding meaning. In my life I've learned that through the dark times, we must be our own source of light. 
+          We have to bring our own sunshine on a cloudy day. We must find ourselves and know our truth in order to 
+          learn our purpose. Stories of Heartache - These are the times when we feel broken. This shattering feeling 
+          comes from family trauma, bad relationships, mental illness, and the weight of the world on our shoulders.
+        </div>
+      </div>
+      <div class="book" onclick="toggleDescription(this);">
+        <img src="clarity.jpg" alt="Clarity & Connection">
+        <div class="book-title">Clarity & Connection</div>
+        <div class="book-author">Yung Pueblo</div>
+        <div class="book-price">$11.43</div>
+        <div class="book-description">
+          In Clarity & Connection, Yung Pueblo describes how intense emotions accumulate in our subconscious and 
+          condition us to act and react in certain ways. In his characteristically spare, poetic style, he guides 
+          readers through the excavation and release of the past that is required for growth.
+        </div>
+      </div>
+
+
+
+
+
+</div>
+  </body>
+  </html>
